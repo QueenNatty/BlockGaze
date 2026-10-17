@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Tokens. Type scale: 14 / 16 / 20 / 30 / 36 / 48. Spacing: 4px grid.
+  gain/loss are only used for price direction and always come with a +/- sign.
+*/
+:root {
+  --paper: 244 246 247;
+  --surface: 255 255 255;
+  --ink: 20 32 43;
+  --muted: 82 99 111;
+  --line: 217 224 229;
+  --accent: 11 90 102;
+  --on-accent: 255 255 255;
+  --gain: 10 112 72;
+  --loss: 179 38 30;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: 15 22 28;
+    --surface: 21 30 38;
+    --ink: 232 238 242;
+    --muted: 154 171 183;
+    --line: 42 56 68;
+    --accent: 95 193 207;
+    --on-accent: 15 22 28;
+    --gain: 76 195 138;
+    --loss: 255 138 128;
+    color-scheme: dark;
+  }
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-paper font-sans text-base text-ink antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid rgb(var(--accent));
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  h1 {
+    @apply text-3xl font-semibold tracking-tight sm:text-4xl;
+  }
+  h2 {
+    @apply text-xl font-semibold;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-md border px-4 text-sm font-medium transition-colors;
+  }
+  .btn-primary {
+    @apply btn border-accent bg-accent text-on-accent hover:bg-accent/90;
+  }
+  .btn-quiet {
+    @apply btn border-muted/60 bg-transparent text-ink hover:bg-ink/5;
+  }
+  .field {
+    @apply min-h-11 w-full rounded-md border border-muted bg-surface px-3 text-base text-ink placeholder:text-muted;
+  }
+  .prose-legal h2 {
+    @apply mt-10 mb-3;
+  }
+  .prose-legal p,
+  .prose-legal li {
+    @apply leading-7;
+  }
+  .prose-legal p {
+    @apply mt-3;
+  }
+  .prose-legal ul {
+    @apply mt-3 list-disc space-y-2 pl-5;
+  }
+  .prose-legal a {
+    @apply text-accent underline underline-offset-2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

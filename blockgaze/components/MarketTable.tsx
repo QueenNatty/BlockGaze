@@ -149,7 +149,7 @@ export function MarketTable({
                 <td className="hidden py-3 pr-3 tabular-nums text-muted sm:table-cell">
                   {m.rank ?? "n/a"}
                 </td>
-                <td className="w-full max-w-0 py-3 pr-3">
+                <td className="w-full max-w-0 py-3 pr-2">
                   <Link
                     href={`/coin/${m.id}`}
                     className="flex min-h-11 items-center gap-3"
@@ -175,7 +175,7 @@ export function MarketTable({
                 <td className="hidden py-3 pl-3 text-right sm:table-cell">
                   <Change value={m.change24h} />
                 </td>
-                <td className="hidden py-3 pl-3 text-right lg:table-cell">
+                <td className="hidden py-3 pl-3 text-right md:table-cell">
                   <Change value={m.change7d} />
                 </td>
                 <td className="hidden py-3 pl-3 text-right tabular-nums md:table-cell">

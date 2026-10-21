@@ -9,7 +9,7 @@ A cryptocurrency price tracker. See the top 100 coins by market cap, open any co
 </p>
 
 <p align="center">
-  <img src="docs/preview-mobile.png" alt="BlockGaze market page on a phone" width="260">
+  <img src="docs/preview-mobile.jpg" alt="BlockGaze market page on a phone" width="260">
 </p>
 
 ## What it does

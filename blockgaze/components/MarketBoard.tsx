@@ -64,6 +64,25 @@ export function MarketBoard({ initialMarkets, initialGlobal }: { initialMarkets?
             className="field"
           />
         </div>
+        <div className="w-full md:hidden">
+          <label htmlFor="sort" className="mb-1 block text-sm font-medium">Sort by</label>
+          <select
+            id="sort"
+            className="field"
+            value={`${sort.key}:${sort.dir}`}
+            onChange={(e) => {
+              const [key, dir] = e.target.value.split(":") as [SortKey, "asc" | "desc"];
+              setSort({ key, dir });
+            }}
+          >
+            <option value="rank:asc">Market cap rank</option>
+            <option value="change24h:desc">Biggest 24h gain</option>
+            <option value="change24h:asc">Biggest 24h loss</option>
+            <option value="price:desc">Price, high to low</option>
+            <option value="volume:desc">24h volume</option>
+            <option value="name:asc">Name A to Z</option>
+          </select>
+        </div>
         <p className="flex flex-col text-sm text-muted sm:items-end" aria-live="polite">
           {markets.data && (
             <span>

@@ -41,7 +41,7 @@ const COLUMNS: Column[] = [
     key: "change7d",
     label: "7d",
     align: "right",
-    show: "hidden lg:table-cell",
+    show: "hidden md:table-cell",
   },
   {
     key: "marketCap",
@@ -149,7 +149,7 @@ export function MarketTable({
                 <td className="hidden py-3 pr-3 tabular-nums text-muted sm:table-cell">
                   {m.rank ?? "n/a"}
                 </td>
-                <td className="py-3 pr-2">
+                <td className="w-full max-w-0 py-3 pr-3">
                   <Link
                     href={`/coin/${m.id}`}
                     className="flex min-h-11 items-center gap-3"

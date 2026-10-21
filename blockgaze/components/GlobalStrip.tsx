@@ -11,8 +11,8 @@ export function GlobalStrip({ initial }: { initial?: GlobalStats }) {
   if (!data) return null;
 
   return (
-    <dl className="grid grid-cols-1 gap-4 border-y border-line py-4 sm:grid-cols-3 sm:gap-6">
-      <div>
+    <dl className="grid grid-cols-2 gap-4 border-y border-line py-4 sm:grid-cols-3 sm:gap-6">
+      <div className="col-span-2 sm:col-span-1">
         <dt className="text-sm text-muted">Total crypto market cap</dt>
         <dd className="mt-1 text-xl font-semibold tabular-nums">
           {formatCompactUsd(data.marketCap)} <Change value={data.marketCapChange24h} className="text-sm font-medium" />
